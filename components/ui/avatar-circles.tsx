@@ -3,6 +3,7 @@
 import React from "react";
 
 import { cn } from "@/lib/utils";
+import { CldImage } from "next-cloudinary";
 
 interface AvatarCirclesProps {
   className?: string;
@@ -18,13 +19,14 @@ const AvatarCircles = ({
   return (
     <div className={cn("z-10 flex -space-x-4 rtl:space-x-reverse", className)}>
       {avatarUrls.slice(0, 3).map((url, index) => (
-        <img
+        <CldImage
           key={index}
           className="h-10 w-10 rounded-full border-2 border-white-600"
           src={url}
           width={40}
           height={40}
           alt={`Avatar ${index + 1}`}
+          priority
         />
       ))}
       {numPeople && numPeople - 3 > 0 && (

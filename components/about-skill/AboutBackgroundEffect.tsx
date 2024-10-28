@@ -1,9 +1,7 @@
 import React from "react";
 import DotPattern from "../ui/dot-pattern";
 
-type Props = {};
-
-const AboutBackgroundEffect = (props: Props) => {
+const AboutBackgroundEffect = () => {
   return (
     <div className="fixed w-screen h-screen top-0 left-0">
       <div className="w-full h-full bg-gradient-to-b from-transparent via-dark-100 from-30%  to-dark-100 absolute z-10" />

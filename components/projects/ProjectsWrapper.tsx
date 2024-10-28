@@ -6,11 +6,7 @@ import ProjectList from "./ProjectList";
 import { useTheme } from "@/context/Theme.Context";
 import { BlurFade } from "../magicui/blur-fade";
 
-interface IProjectsWrapperProps {}
-
-const ProjectsWrapper: React.FunctionComponent<IProjectsWrapperProps> = (
-  props
-) => {
+const ProjectsWrapper = () => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
 
@@ -23,7 +19,7 @@ const ProjectsWrapper: React.FunctionComponent<IProjectsWrapperProps> = (
         isDarkMode ? "bg-dark-100 text-light-100" : "text-dark-100 bg-light-200"
       }`}
     >
-      {isDarkMode && <ProjectsBackGroundEffect isDarkMode={isDarkMode} />}
+      {isDarkMode && <ProjectsBackGroundEffect />}
 
       <TopHeader
         topSubTitle="Some of the"

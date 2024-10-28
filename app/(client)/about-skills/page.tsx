@@ -1,9 +1,7 @@
 import AboutWrapper from "@/components/about-skill/AboutWrapper";
 import React from "react";
 
-type Props = {};
-
-const About = (props: Props) => {
+const About = () => {
   return <AboutWrapper />;
 };
 

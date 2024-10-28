@@ -3,9 +3,7 @@ import { icons } from "@/lib/constants/icon";
 import * as React from "react";
 import { useTheme } from "@/context/Theme.Context";
 
-interface IToggleThemeProps {}
-
-const ToggleTheme: React.FunctionComponent<IToggleThemeProps> = (props) => {
+const ToggleTheme = () => {
   // HOOKS
   const { theme, handleThemeToggle: toggleTheme } = useTheme();
 

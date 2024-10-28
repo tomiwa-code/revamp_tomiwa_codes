@@ -5,9 +5,7 @@ import { icons } from "@/lib/constants/icon";
 import { useTheme } from "@/context/Theme.Context";
 import { BlurFade } from "../magicui/blur-fade";
 
-type Props = {};
-
-const SocialDock = (props: Props) => {
+const SocialDock = () => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
 

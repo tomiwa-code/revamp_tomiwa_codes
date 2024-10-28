@@ -17,7 +17,6 @@ const HomeBackgroundEffect = ({ isDarkMode }: Props) => {
         <AnimatedGridPattern
           width={120}
           height={120}
-          duration={3}
           numSquares={100}
         />
       </div>

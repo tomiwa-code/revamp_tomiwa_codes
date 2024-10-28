@@ -1,9 +1,7 @@
 import ContactWrapper from "@/components/contact/ContactWrapper";
 import React from "react";
 
-type Props = {};
-
-const Contact = (props: Props) => {
+const Contact = () => {
   return <ContactWrapper />;
 };
 

@@ -5,9 +5,7 @@ import { icons } from "@/lib/constants/icon";
 import Link from "next/link";
 import { useTheme } from "@/context/Theme.Context";
 
-interface IProjectListProps {}
-
-const ProjectList: React.FunctionComponent<IProjectListProps> = (props) => {
+const ProjectList = () => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
 
@@ -84,7 +82,7 @@ const ProjectList: React.FunctionComponent<IProjectListProps> = (props) => {
             className={`text-base font-regular tracking-wide ${isDarkMode ? "text-light-300 " : "text-dark-300 "} leading-8`}
           >
             Test Your Knowledge with Fun Trivia! 🚀. I took on a challenge and
-            built QuizQuest in just 7 hours! 🏆 It's a web app where you can
+            built QuizQuest in just 7 hours! 🏆 It&apos;s a web app where you can
             test your knowledge with quizzes on various topics.
           </p>
         </div>

@@ -7,9 +7,7 @@ import { useTheme } from "@/context/Theme.Context";
 import { FadeText } from "../magicui/fade-text";
 import { BlurFade } from "../magicui/blur-fade";
 
-type Props = {};
-
-const ContactWrapper = (props: Props) => {
+const ContactWrapper = () => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
 

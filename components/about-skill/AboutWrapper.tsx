@@ -4,9 +4,7 @@ import TopHeader from "../general/TopHeader";
 import AboutBackgroundEffect from "./AboutBackgroundEffect";
 import { useTheme } from "@/context/Theme.Context";
 
-type Props = {};
-
-const AboutWrapper = (props: Props) => {
+const AboutWrapper = () => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
 

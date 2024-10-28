@@ -1,9 +1,11 @@
 import type { Rule } from "@sanity/types";
+import { FaUsers } from "react-icons/fa";
 
 export default {
   name: "contributor",
   type: "document",
   title: "Contributor",
+  icon: FaUsers,
   fields: [
     {
       name: "name",
@@ -11,17 +13,21 @@ export default {
       title: "Name",
     },
     {
-      name: "image",
-      type: "image",
-      title: "Profile Image",
-      options: {
-        hotspot: true,
-      },
+      name: "imageurl",
+      title: "Image Url",
+      type: "url",
+      initialValue: "https://",
+      validation: (Rule: Rule) =>
+        Rule.uri({
+          scheme: ["http", "https"],
+          allowRelative: false,
+        }),
     },
     {
       name: "github",
       type: "url",
       title: "GitHub Profile",
+      initialValue: "https://",
       validation: (Rule: Rule) =>
         Rule.uri({
           scheme: ["http", "https"],

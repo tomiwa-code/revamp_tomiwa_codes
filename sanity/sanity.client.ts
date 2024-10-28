@@ -1,18 +1,16 @@
+import { ResumeProps } from "@/types/home.type";
 import { createClient, type ClientConfig } from "@sanity/client";
 
 const config: ClientConfig = {
   projectId: "tpr1dl0v",
   dataset: "production",
   apiVersion: "2023-10-31",
-  useCdn: false
+  useCdn: false,
 };
 
 export const client = createClient(config);
 
-export const urlForPDF = (pdfReference: {
-  _type: string;
-  asset: { _ref: string; _type: string };
-}) => {
+export const urlForPDF = (pdfReference: ResumeProps) => {
   if (
     pdfReference &&
     pdfReference._type === "file" &&
@@ -25,4 +23,3 @@ export const urlForPDF = (pdfReference: {
   }
   return "#";
 };
-

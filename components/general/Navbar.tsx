@@ -4,9 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as React from "react";
 
-interface INavbarProps {}
-
-const Navbar: React.FunctionComponent<INavbarProps> = (props) => {
+const Navbar = () => {
   // HOOKS
   const pathname = usePathname();
   const { theme } = useTheme();
