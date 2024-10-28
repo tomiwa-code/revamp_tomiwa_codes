@@ -23,7 +23,7 @@ const AboutWrapper = (props: Props) => {
 
       <TopHeader
         topSubTitle="A bit about"
-        title="WHOO I AM"
+        title="WHO I AM"
         bottomSubTitle="& what I do"
       />
     </div>

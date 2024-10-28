@@ -4,6 +4,8 @@ import ContactBackgroundEffect from "./ContactBackgroundEffect";
 import TopHeader from "../general/TopHeader";
 import ContactForm from "./ContactForm";
 import { useTheme } from "@/context/Theme.Context";
+import { FadeText } from "../magicui/fade-text";
+import { BlurFade } from "../magicui/blur-fade";
 
 type Props = {};
 
@@ -24,19 +26,23 @@ const ContactWrapper = (props: Props) => {
 
       <TopHeader
         topSubTitle="Interested in working together?"
-        title="LET'S COONECT"
+        title="LET'S CONNECT"
         bottomSubTitle="I’d love to hear from you"
       />
 
-      <ContactForm isDarkMode={isDarkMode} />
+      <BlurFade yOffset={10} delay={0 * 3} inView>
+        <ContactForm isDarkMode={isDarkMode} />
+      </BlurFade>
 
-      <div className="mt-20 w-full relative z-50">
-        <p
-          className={`text-sm ${isDarkMode ? "text-light-600" : "text-dark-300"} font-medium text-center`}
-        >
-          I am open to remote and onsite full-time, part-time, and contract
-          frontend web & mobile development jobs.
-        </p>
+      <div className="mt-20 w-full relative z-50 flex items-center justify-center">
+        <FadeText
+          className={`${
+            isDarkMode ? "text-light-600 font-light" : "text-dark-100"
+          } text-xs md:text-sm`}
+          text={
+            "I am open to remote and onsite full-time, part-time, and contract frontend web & mobile development jobs."
+          }
+        />
       </div>
     </div>
   );
