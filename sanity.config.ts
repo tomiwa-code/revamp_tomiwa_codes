@@ -1,4 +1,5 @@
 import { defineConfig } from "sanity";
+import {structureTool} from 'sanity/structure'
 import { schemaTypes } from "./schemas";
 
 const config = defineConfig({
@@ -7,6 +8,7 @@ const config = defineConfig({
   dataset: "production",
   basePath: "/tomiwacodesadmin",
   apiVersion: "2023-10-31",
+  plugins: [structureTool()],
   schema: {
     types: schemaTypes,
   },
