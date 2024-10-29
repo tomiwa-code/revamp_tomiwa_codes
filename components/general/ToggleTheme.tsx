@@ -11,9 +11,9 @@ const ToggleTheme = () => {
   const isDarkMode = theme === "dark";
 
   return (
-    <button
+    <div
       onClick={toggleTheme}
-      className="flex items-center rounded-full bg-gray-300 dark:bg-gray-700 focus:outline-none z-[999] fixed right-10 top-8"
+      className="flex cursor-pointer items-center rounded-full bg-gray-300 dark:bg-gray-700 focus:outline-none z-[999] fixed right-10 top-8"
     >
       <div className="w-20 h-10 pl-2 rounded-full bg-dark-500 dark:bg-gray-300 relative flex items-center">
         <div
@@ -36,7 +36,7 @@ const ToggleTheme = () => {
           )}
         </div>
       </div>
-    </button>
+    </div>
   );
 };
 

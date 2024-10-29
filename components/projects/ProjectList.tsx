@@ -1,104 +1,150 @@
 import React from "react";
 import AvatarCircles from "../ui/avatar-circles";
 import { CldImage } from "next-cloudinary";
-import { icons } from "@/lib/constants/icon";
+import { icons, iconValue } from "@/lib/constants/icon";
 import Link from "next/link";
 import { useTheme } from "@/context/Theme.Context";
+import { ProjectResProps } from "@/types/project.type";
+import HoverVideoPlayer from "react-hover-video-player";
 
-const ProjectList = () => {
+type ProjectListProps = {
+  projectData: ProjectResProps;
+};
+
+const ProjectList = ({ projectData }: ProjectListProps) => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
 
   // DECLARES
+  const {
+    projectimage,
+    projectvideo,
+    description,
+    contributors,
+    tools,
+    name,
+    links,
+  } = projectData;
   const isDarkMode = theme === "dark";
-  const collaborators = [
-    "https://res.cloudinary.com/dgdoymhtj/image/upload/v1705699926/my-portfolio/WhatsApp_Image_2024-01-19_at_22.04.19_txrz54.jpg",
-    "https://res.cloudinary.com/dgdoymhtj/image/upload/v1705699926/my-portfolio/WhatsApp_Image_2024-01-19_at_22.04.19_txrz54.jpg",
-  ];
 
   return (
     <div
-      className={`w-[460px] rounded-2xl ${isDarkMode ? "bg-dark-200" : "bg-light-200 shadow-3xl"} h-auto pb-8`}
+      className={`rounded-2xl ${isDarkMode ? "bg-dark-200" : "bg-light-200 shadow-3xl"} pb-8 h-full`}
     >
-      <div className="w-full h-[300px] rounded-tr-2xl rounded-tl-2xl overflow-hidden">
-        <CldImage
-          src="https://res.cloudinary.com/dgdoymhtj/image/upload/v1713261927/my-portfolio/3c8f060f-9c4e-41db-8bfa-65a7582e6681.png"
-          alt="image name"
-          width="1000"
-          height="1000"
-          crop={{
-            type: "auto",
-            source: true,
+      <div className="w-full h-[300px] rounded-tr-2xl rounded-tl-2xl overflow-hidden cursor-pointer relative">
+        <HoverVideoPlayer
+          style={{
+            height: "101%",
+            width: "101%",
           }}
-          priority
+          videoSrc={projectvideo}
+          pausedOverlay={
+            <CldImage
+              src={projectimage}
+              alt={name}
+              width="1000"
+              height="1000"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+              priority
+            />
+          }
+          loadingOverlay={
+            <div className="loading-overlay">
+              <div className="loading-spinner" />
+            </div>
+          }
+          unloadVideoOnPaused={true}
+          disablePictureInPicture
+          playbackStartDelay={500}
         />
       </div>
-      <div className="flex items-center justify-center w-full -mt-8 gap-x-6 flex-wrap gap-y-3">
-        <div
-          className={`p-2 ${isDarkMode ? "bg-dark-300" : "bg-dark-200"} w-16 h-16 rounded-full flex items-center justify-center relative group`}
-        >
-          {icons["next"]({
-            className: ` ${isDarkMode ? "text-primary-200 " : "text-light-200"} text-[80px]`,
-          })}
-          <span className="w-[80px] items-center flex justify-center absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 text-sm text-light-600 bg-dark-200 backdrop-blur-m bg-opacity-90 font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Next JS
-          </span>
-        </div>
-        <div
-          className={`p-2 ${isDarkMode ? "bg-dark-300" : "bg-dark-200"} w-16 h-16 rounded-full flex items-center justify-center group relative`}
-        >
-          {icons["react"]({
-            className: ` ${isDarkMode ? "text-primary-200 " : "text-light-200"} text-[80px]`,
-          })}
-          <span className="w-[80px] items-center flex justify-center absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 text-sm text-light-600 bg-dark-200 backdrop-blur-m bg-opacity-90 font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            React JS
-          </span>
-        </div>
+
+      <div className="flex items-center justify-center w-full -mt-8 gap-x-6 flex-wrap gap-y-3 z-50 relative">
+        {tools && (
+          <>
+            {tools.map((tool) => {
+              const isIcon = tool as keyof typeof icons;
+
+              return (
+                <div
+                  key={tool}
+                  className={`p-2 ${isDarkMode ? "bg-dark-300" : "bg-dark-200"} w-14 h-14 rounded-full flex items-center justify-center relative group`}
+                >
+                  {icons[isIcon]({
+                    className: `${isDarkMode ? "text-light-600 " : "text-light-200"} text-[70px]`,
+                  })}
+                  <span className="w-[80px] items-center flex justify-center absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 text-sm text-light-600 bg-dark-200 backdrop-blur-m bg-opacity-90 font-medium rounded-md opacity-0 group-hover:opacity-100 capitalize transition-opacity duration-300">
+                    {iconValue[tool as keyof typeof iconValue]}
+                  </span>
+                </div>
+              );
+            })}
+          </>
+        )}
       </div>
 
-      <div className="px-8 mt-3">
+      <div className="px-8 mt-5">
         <div className="flex items-center justify-between">
           <p
             className={`capitalize text-2xl ${isDarkMode ? "text-light-300" : "text-dark-300"} font-bold`}
           >
-            TYTN wears
+            {name}
           </p>
           <div className="flex items-center justify-end gap-x-3">
-            {(["exLink", "github"] as Array<keyof typeof icons>).map((icon) => (
-              <Link
-                href="#"
-                key={icon}
-                className={`${isDarkMode ? "bg-dark-300" : "bg-dark-200"} rounded-full w-12 h-12 items-center flex justify-center`}
-              >
-                {icons[icon]({
-                  className: `${isDarkMode ? "text-primary-200 " : "text-light-200"} text-3xl hover:text-primary-600`,
-                })}
-              </Link>
-            ))}
+            <Link
+              href={links.site}
+              target="_blank"
+              rel="noreferrer"
+              className={`${isDarkMode ? "bg-dark-300" : "bg-dark-200"} rounded-full w-12 h-12 items-center flex justify-center`}
+            >
+              {icons.exLink({
+                className: `${isDarkMode ? "text-primary-200 " : "text-light-200"} text-3xl hover:text-primary-600`,
+              })}
+            </Link>
+
+            {links.github &&
+              links.github !== "https://null" &&
+              links.github !== "https://" && (
+                <Link
+                  href={links.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${isDarkMode ? "bg-dark-300" : "bg-dark-200"} rounded-full w-12 h-12 items-center flex justify-center`}
+                >
+                  {icons.github({
+                    className: `${isDarkMode ? "text-primary-200 " : "text-light-200"} text-3xl hover:text-primary-600`,
+                  })}
+                </Link>
+              )}
           </div>
         </div>
+
         <div className="mt-3.5">
           <p
             className={`text-base font-regular tracking-wide ${isDarkMode ? "text-light-300 " : "text-dark-300 "} leading-8`}
           >
-            Test Your Knowledge with Fun Trivia! 🚀. I took on a challenge and
-            built QuizQuest in just 7 hours! 🏆 It&apos;s a web app where you can
-            test your knowledge with quizzes on various topics.
+            {description}
           </p>
         </div>
-        <div className="mt-3">
-          <p
-            className={`text-lg ${isDarkMode ? "text-primary-100 " : "text-dark-200 "} font-medium`}
-          >
-            Collaborators
-          </p>
-          <div className="mt-2">
-            <AvatarCircles
-              numPeople={collaborators.length}
-              avatarUrls={collaborators}
-            />
+        {contributors && (
+          <div className="mt-3">
+            <p
+              className={`text-lg ${isDarkMode ? "text-primary-100 " : "text-dark-200 "} font-medium`}
+            >
+              Collaborators
+            </p>
+            <div className="mt-2">
+              <AvatarCircles
+                numPeople={contributors.length}
+                avatarUrls={contributors}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

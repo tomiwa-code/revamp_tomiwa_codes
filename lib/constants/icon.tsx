@@ -1,9 +1,20 @@
 import { BiLogoTypescript } from "react-icons/bi";
-import { SiCloudinary, SiMongodb, SiSanity, SiSwr, SiVite } from "react-icons/si";
+import {
+  SiCloudinary,
+  SiMongodb,
+  SiSanity,
+  SiSwr,
+  SiVite,
+} from "react-icons/si";
 import { CgFramer } from "react-icons/cg";
 import { IoLogoFirebase, IoLogoNodejs } from "react-icons/io5";
 import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { FaReact, FaXTwitter, FaWandMagicSparkles } from "react-icons/fa6";
+import {
+  FaReact,
+  FaXTwitter,
+  FaWandMagicSparkles,
+  FaCss3,
+} from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { TfiLinkedin } from "react-icons/tfi";
 import { AiOutlineTikTok } from "react-icons/ai";
@@ -38,4 +49,30 @@ export const icons = {
   exLink: (props: IconType) => <GoLinkExternal {...props} />,
   moon: (props: IconType) => <BsMoonFill {...props} />,
   sun: (props: IconType) => <BsSunFill {...props} />,
+  css: (props: IconType) => <FaCss3 {...props} />,
+};
+
+export const iconValue = {
+  next: "Next JS",
+  react: "React",
+  reactNative: "React Native",
+  tailwind: "Tailwind CSS",
+  typescript: "TypeScript",
+  sanity: "Sanity",
+  framer: "Framer",
+  vite: "Vite JS",
+  node: "Node JS",
+  swr: "SWR",
+  mongoDB: "MongoDB",
+  firebase: "Firebase",
+  cloudinary: "Cloudinary",
+  github: "Github",
+  linkedin: "LinkedIn",
+  tiktok: "TikTok",
+  x: "Twitter",
+  magic: "Magic UI",
+  exLink: "External Link",
+  moon: "Dark Mode",
+  sun: "Light Mode",
+  css: "CSS",
 };

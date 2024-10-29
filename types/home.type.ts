@@ -16,3 +16,11 @@ export type ResumeProps = {
   _type: string;
   asset: { _ref: string; _type: string };
 };
+
+export type SocialLinkRes = {
+  github: string;
+  linkedin: string;
+  tiktok: string;
+  twitter: string;
+  instagrea?: string;
+};

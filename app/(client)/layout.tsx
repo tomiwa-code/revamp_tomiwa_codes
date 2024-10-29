@@ -28,11 +28,11 @@ export default function RootLayout({
       <body className={`${StretchPro.variable} antialiased`}>
         <NextTopLoader color="#b251e6" showSpinner={false} />
         <ThemeContextProvider>
-          <div className="bg-dark-100 text-white min-h-screen w-full">
+          <main className="bg-dark-100 text-white min-h-screen w-full">
             <Navbar />
             <ToggleTheme />
             {children}
-          </div>
+          </main>
         </ThemeContextProvider>
       </body>
     </html>

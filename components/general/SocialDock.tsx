@@ -4,12 +4,18 @@ import Link from "next/link";
 import { icons } from "@/lib/constants/icon";
 import { useTheme } from "@/context/Theme.Context";
 import { BlurFade } from "../magicui/blur-fade";
+import { SocialLinkRes } from "@/types/home.type";
 
-const SocialDock = () => {
+type SocialDockProps = {
+  socialLinks: SocialLinkRes;
+};
+
+const SocialDock = ({ socialLinks }: SocialDockProps) => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
 
   // DECLARES
+  const { github, twitter, linkedin, tiktok } = socialLinks;
   const isDarkMode = theme === "dark";
 
   // STYLES
@@ -20,22 +26,22 @@ const SocialDock = () => {
       <BlurFade delay={0 * 3} inView>
         <Dock magnification={60} distance={100}>
           <DockIcon className={`${dockIconStyles}`}>
-            <Link href={`#`}>
+            <Link href={github} aria-hidden="true">
               {icons["github"]({ className: "text-primary-100" })}
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
-            <Link href={`#`}>
+            <Link href={linkedin} aria-hidden="true">
               {icons["linkedin"]({ className: "text-primary-100" })}
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
-            <Link href={`#`}>
+            <Link href={tiktok} aria-hidden="true">
               {icons["tiktok"]({ className: "text-primary-100" })}
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
-            <Link href={`#`}>
+            <Link href={twitter} aria-hidden="true">
               {icons["x"]({ className: "text-primary-100" })}
             </Link>
           </DockIcon>

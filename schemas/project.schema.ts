@@ -1,9 +1,10 @@
-import type { Rule } from '@sanity/types';
+import { FaFolder } from 'react-icons/fa';
 
 const project = {
   name: "project",
   title: "Projects",
   type: "document",
+  icon: FaFolder,
   fields: [
     {
       name: "name",
@@ -66,7 +67,6 @@ const project = {
       type: "text",
       title: "Description",
       description: "Provide a brief overview of what this app does",
-      validation: (Rule: Rule) => Rule.max(300),
     },
     {
       name: "tools",
@@ -81,8 +81,9 @@ const project = {
           { title: "Next JS", value: "next" },
           { title: "Vite JS", value: "vite" },
           { title: "Tailwind CSS", value: "tailwind" },
+          { title: "CSS", value: "css" },
           { title: "Sanity", value: "sanity" },
-          { title: "Node JS", value: "nodeJs" },
+          { title: "Node JS", value: "node" },
           { title: "TypeScript", value: "typescript" },
           { title: "SWR", value: "swr" },
           { title: "Firebase", value: "firebase" },

@@ -27,6 +27,9 @@ export async function getProjects() {
       projectvideo,
       links,
       contribution,
+      description,
+      tools,
+      contributors[] -> { name, imageurl, github },
     }`,
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 import { useTheme } from "@/context/Theme.Context";
 import React from "react";
-// import SocialDock from "../general/SocialDock";
 import TextContent from "./TextContent";
 import dynamic from "next/dynamic";
-import { getHero } from "@/sanity/sanity.query";
-import { HomeResProp } from "@/types/home.type";
+import { getHero, getSocialLinks } from "@/sanity/sanity.query";
+import { HomeResProp, SocialLinkRes } from "@/types/home.type";
+import ContentLoader from "../general/ContentLoader";
 
 const HomeBackgroundEffect = dynamic(() => import("./HomeBackgroundEffect"));
 const SocialDock = dynamic(() => import("../general/SocialDock"));
@@ -15,6 +15,9 @@ const HomeWrapper = () => {
   const [isMounted, setIsMounted] = React.useState(false);
   const [isLoading, startTransition] = React.useTransition();
   const [heroData, setHeroData] = React.useState<HomeResProp | null>(null);
+  const [socialLinks, setSocialLinks] = React.useState<SocialLinkRes | null>(
+    null
+  );
 
   // CUSTOM HOOKS
   const { theme } = useTheme();
@@ -29,15 +32,25 @@ const HomeWrapper = () => {
         const res = await getHero();
         setHeroData(res[0]);
       } catch (err: unknown) {
-        console.error(err);
+        // console.error(err);
       }
     });
+  };
+
+  const fetchSocialLinks = async () => {
+    try {
+      const res = await getSocialLinks();
+      setSocialLinks(res[0]?.socialLinks);
+    } catch (err: unknown) {
+      // console.error(err);
+    }
   };
 
   // USE EFFECTS
   React.useEffect(() => {
     setIsMounted(true);
     fetchLandingPageContent();
+    fetchSocialLinks();
   }, []);
 
   return (
@@ -50,12 +63,12 @@ const HomeWrapper = () => {
         {isMounted && <HomeBackgroundEffect isDarkMode={isDarkMode} />}
 
         {isLoading ? (
-          <p>Fetching Content</p>
+          <ContentLoader />
         ) : (
           heroData && <TextContent isDarkMode={isDarkMode} content={heroData} />
         )}
 
-        {isMounted && <SocialDock />}
+        {isMounted && socialLinks && <SocialDock socialLinks={socialLinks} />}
       </div>
     </div>
   );

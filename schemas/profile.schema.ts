@@ -1,13 +1,20 @@
-import { BiUser } from "react-icons/bi";
 import { FiGithub } from "react-icons/fi";
 import { TfiLinkedin } from "react-icons/tfi";
-import { BsEnvelope, BsInstagram, BsPhone, BsTwitter, BsWhatsapp } from "react-icons/bs";
+import {
+  BsEnvelope,
+  BsInstagram,
+  BsPhone,
+  BsTiktok,
+  BsTwitter,
+  BsWhatsapp,
+} from "react-icons/bs";
+import { FaUser } from "react-icons/fa6";
 
 const profile = {
   name: "profile",
   title: "Profile",
   type: "document",
-  icon: BiUser,
+  icon: FaUser,
   fields: [
     {
       name: "profileImage",
@@ -35,7 +42,7 @@ const profile = {
     {
       name: "bottomText",
       title: "slogan or word of inspiring",
-      type: "string"
+      type: "string",
     },
     {
       name: "socialLinks",
@@ -70,6 +77,13 @@ const profile = {
           type: "url",
           initialValue: "https://www.instagram.com/crown.kvnq",
           icon: BsInstagram,
+        },
+        {
+          name: "tiktok",
+          title: "TikTok URL",
+          type: "url",
+          initialValue: "https://www.tiktok.com/@tomiwa.codes",
+          icon: BsTiktok,
         },
       ],
     },
