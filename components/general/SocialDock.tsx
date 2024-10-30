@@ -26,22 +26,42 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
       <BlurFade delay={0 * 3} inView>
         <Dock magnification={60} distance={100}>
           <DockIcon className={`${dockIconStyles}`}>
-            <Link href={github} aria-hidden="true">
+            <Link
+              href={github}
+              aria-hidden="true"
+              target="_blank"
+              rel="noreferrer"
+            >
               {icons["github"]({ className: "text-primary-100" })}
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
-            <Link href={linkedin} aria-hidden="true">
+            <Link
+              href={linkedin}
+              aria-hidden="true"
+              target="_blank"
+              rel="noreferrer"
+            >
               {icons["linkedin"]({ className: "text-primary-100" })}
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
-            <Link href={tiktok} aria-hidden="true">
+            <Link
+              href={tiktok}
+              aria-hidden="true"
+              target="_blank"
+              rel="noreferrer"
+            >
               {icons["tiktok"]({ className: "text-primary-100" })}
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
-            <Link href={twitter} aria-hidden="true">
+            <Link
+              href={twitter}
+              aria-hidden="true"
+              target="_blank"
+              rel="noreferrer"
+            >
               {icons["x"]({ className: "text-primary-100" })}
             </Link>
           </DockIcon>

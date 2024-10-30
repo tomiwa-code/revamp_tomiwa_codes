@@ -63,14 +63,48 @@ const ProjectsWrapper = () => {
           <ContentLoader />
         </div>
       ) : (
-        <div className="relative z-40 mt-24 mx-auto gap-y-12 grid md:grid-cols-2 w-full md:w-9/12 lg:w-[58%] md:gap-x-10 md:gap-y-14 lg:gap-16">
-          {projectData &&
-            projectData.map((item, idx) => (
-              <BlurFade key={item._id} delay={0.25 + idx * 0.05} inView>
-                <ProjectList projectData={item} />
-              </BlurFade>
-            ))}
-        </div>
+        <>
+          <div className="relative z-40 mt-24 mx-auto gap-y-12 grid md:grid-cols-2 w-full md:w-9/12 lg:w-[58%] md:gap-x-10 md:gap-y-14 lg:gap-16">
+            {projectData &&
+              projectData.map((item, idx) => (
+                <BlurFade key={item._id} delay={0.25 + idx * 0.05} inView>
+                  <ProjectList projectData={item} />
+                </BlurFade>
+              ))}
+          </div>
+
+          {projectData && projectData.length === 0 && (
+            <BlurFade
+              delay={0.25}
+              inView
+              className="w-full text-center mt-20 z-50 relative"
+            >
+              <p
+                className={`${
+                  isDarkMode ? "text-light-600 font-light" : "text-dark-100"
+                } text-xs md:text-sm`}
+              >
+                No projects available at the moment.
+              </p>
+            </BlurFade>
+          )}
+
+          {projectData && projectData.length > 0 && (
+            <BlurFade
+              delay={0.25}
+              inView
+              className="w-full text-center mt-20 z-50 relative"
+            >
+              <p
+                className={`${
+                  isDarkMode ? "text-light-600 font-light" : "text-dark-100"
+                } text-xs md:text-sm`}
+              >
+                Trust me with your project, and prepare to be impressed.
+              </p>
+            </BlurFade>
+          )}
+        </>
       )}
     </div>
   );

@@ -12,6 +12,9 @@ export async function getProfile() {
       fullBio,
       contacts,
       socialLinks,
+      bio,
+      greeting,
+      fullname,
     }`,
   );
 }

@@ -13,6 +13,12 @@ const skills = {
       description: "Name of the skill",
     },
     {
+      name: "value",
+      title: "Skill Value",
+      type: "string",
+      description: "Name of the skill",
+    },
+    {
       name: "category",
       title: "Category",
       type: "string",

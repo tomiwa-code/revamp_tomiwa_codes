@@ -29,6 +29,25 @@ const profile = {
       rows: 4,
     },
     {
+      name: "bio",
+      title: "Bio",
+      type: "text",
+      rows: 4,
+      description: "A short description about you",
+    },
+    {
+      name: "fullname",
+      title: "Full Name",
+      type: "string",
+      description: "Your full name",
+    },
+    {
+      name: "greeting",
+      title: "Greeting",
+      type: "string",
+      description: "A greeting message",
+    },
+    {
       name: "location",
       title: "Location",
       type: "string",
