@@ -22,7 +22,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
   const dockIconStyles = `${isDarkMode ? "bg-black/10" : "bg-dark-200"} p-3`;
 
   return (
-    <div className="absolute bottom-16 z-[90]">
+    <div className="absolute bottom-8 md:bottom-16 z-[90]">
       <BlurFade delay={0 * 3} inView>
         <Dock magnification={60} distance={100}>
           <DockIcon className={`${dockIconStyles}`}>

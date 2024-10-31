@@ -40,10 +40,10 @@ const Navbar = () => {
   const listStyles = `list-none -rotate-90`;
   const lineStyles = `w-0.5 ${
     theme === "dark" ? "bg-gray-200" : "bg-dark-100"
-  } h-1/4`;
+  } h-[120px] md:h-1/4`;
 
   return (
-    <div className="fixed px-6 flex flex-col items-center justify-between h-screen z-[9999]">
+    <div className="fixed -ml-3 md:ml-0 md:px-6 flex flex-col items-center justify-between h-screen z-[9999]">
       {/* LINE  */}
       <div className={`${lineStyles}`} />
 

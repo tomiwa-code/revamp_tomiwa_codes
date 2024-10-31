@@ -57,7 +57,7 @@ const HomeWrapper = () => {
         isDarkMode ? "bg-dark-100 text-light-100" : "text-dark-100 bg-light-200"
       } items-center justify-center h-screen`}
     >
-      <div className="w-full flex h-screen items-center justify-center relative overflow-hidden">
+      <div className="w-full flex h-screen items-center justify-center relative overflow-hidden pl-5 md:pl-0">
         <HomeBackgroundEffect isDarkMode={isDarkMode} />
 
         {isLoading ? (
