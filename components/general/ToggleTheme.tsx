@@ -22,17 +22,17 @@ const ToggleTheme = () => {
           }`}
         >
           {isDarkMode ? (
-            <>
-              {icons["moon"]({
-                className: `text-xl ${isDarkMode ? "text-primary-600" : "text-dark-300"}`,
-              })}
-            </>
+            <div>
+              <icons.moon
+                className={`text-xl ${isDarkMode ? "text-primary-600" : "text-dark-300"}`}
+              />
+            </div>
           ) : (
-            <>
-              {icons["sun"]({
-                className: `text-xl ${isDarkMode ? "text-primary-600" : "text-dark-300"}`,
-              })}
-            </>
+            <div>
+              <icons.sun
+                className={`text-xl ${isDarkMode ? "text-primary-600" : "text-dark-300"}`}
+              />
+            </div>
           )}
         </div>
       </div>

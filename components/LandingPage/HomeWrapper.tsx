@@ -12,7 +12,6 @@ const SocialDock = dynamic(() => import("../general/SocialDock"));
 
 const HomeWrapper = () => {
   // REACT HOOKS
-  const [isMounted, setIsMounted] = React.useState(false);
   const [isLoading, startTransition] = React.useTransition();
   const [heroData, setHeroData] = React.useState<HomeResProp | null>(null);
   const [socialLinks, setSocialLinks] = React.useState<SocialLinkRes | null>(
@@ -48,7 +47,6 @@ const HomeWrapper = () => {
 
   // USE EFFECTS
   React.useEffect(() => {
-    setIsMounted(true);
     fetchLandingPageContent();
     fetchSocialLinks();
   }, []);
@@ -60,7 +58,7 @@ const HomeWrapper = () => {
       } items-center justify-center h-screen`}
     >
       <div className="w-full flex h-screen items-center justify-center relative overflow-hidden">
-        {isMounted && <HomeBackgroundEffect isDarkMode={isDarkMode} />}
+        <HomeBackgroundEffect isDarkMode={isDarkMode} />
 
         {isLoading ? (
           <ContentLoader />
@@ -68,7 +66,7 @@ const HomeWrapper = () => {
           heroData && <TextContent isDarkMode={isDarkMode} content={heroData} />
         )}
 
-        {isMounted && socialLinks && <SocialDock socialLinks={socialLinks} />}
+        {socialLinks && <SocialDock socialLinks={socialLinks} />}
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import TopHeader from "../general/TopHeader";
-import ProjectsBackGroundEffect from "./ProjectsBackgroundEffect";
 import { useTheme } from "@/context/Theme.Context";
 import { BlurFade } from "../magicui/blur-fade";
 import { getProjects } from "@/sanity/sanity.query";
@@ -10,13 +9,15 @@ import ContentLoader from "../general/ContentLoader";
 import dynamic from "next/dynamic";
 
 const ProjectList = dynamic(() => import("./ProjectList"));
+const ProjectsBackGroundEffect = dynamic(
+  () => import("./ProjectsBackgroundEffect")
+);
 
 const ProjectsWrapper = () => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
 
   // REACT HOOKS
-  const [isMounted, setIsMounted] = React.useState(false);
   const [isLoading, startTransition] = React.useTransition();
   const [projectData, setProjectData] = React.useState<
     ProjectResProps[] | null
@@ -40,7 +41,6 @@ const ProjectsWrapper = () => {
 
   // USE EFFECTS
   React.useEffect(() => {
-    setIsMounted(true);
     fetchProjects();
   }, []);
 
@@ -50,7 +50,7 @@ const ProjectsWrapper = () => {
         isDarkMode ? "bg-dark-100 text-light-100" : "text-dark-100 bg-light-200"
       }`}
     >
-      {isMounted && isDarkMode && <ProjectsBackGroundEffect />}
+      {isDarkMode && <ProjectsBackGroundEffect />}
 
       <TopHeader
         topSubTitle="Some of the"

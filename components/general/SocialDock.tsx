@@ -32,7 +32,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              {icons["github"]({ className: "text-primary-100" })}
+              <icons.github className={"text-primary-100"} />
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
@@ -42,7 +42,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              {icons["linkedin"]({ className: "text-primary-100" })}
+              <icons.linkedin className={"text-primary-100"} />
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
@@ -52,7 +52,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              {icons["tiktok"]({ className: "text-primary-100" })}
+              <icons.tiktok className={"text-primary-100"} />
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
@@ -62,7 +62,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              {icons["x"]({ className: "text-primary-100" })}
+              <icons.x className={"text-primary-100"} />
             </Link>
           </DockIcon>
         </Dock>

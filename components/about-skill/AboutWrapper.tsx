@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import TopHeader from "../general/TopHeader";
-import AboutBackgroundEffect from "./AboutBackgroundEffect";
 import { useTheme } from "@/context/Theme.Context";
 import { ProfileResProps } from "@/types/about-skill.type";
 import { getProfile } from "@/sanity/sanity.query";
@@ -11,11 +10,13 @@ import { BlurFade } from "../magicui/blur-fade";
 
 const About = dynamic(() => import("./About"));
 const Skill = dynamic(() => import("./Skill"));
+const AboutBackgroundEffect = dynamic(() => import("./AboutBackgroundEffect"));
 
 const AboutWrapper = () => {
   // CUSTOM HOOKS
   const { theme } = useTheme();
-  const [isMounted, setIsMounted] = React.useState(false);
+
+  // REACT HOOKS
   const [isLoading, startTransition] = React.useTransition();
   const [profileData, setProfileData] = React.useState<ProfileResProps | null>(
     null
@@ -39,7 +40,6 @@ const AboutWrapper = () => {
 
   // USE EFFECTS
   React.useEffect(() => {
-    setIsMounted(true);
     fetchProfileDetails();
   }, []);
 
@@ -49,7 +49,7 @@ const AboutWrapper = () => {
         isDarkMode ? "bg-dark-100 text-light-100" : "text-dark-100 bg-light-200"
       }`}
     >
-      {isMounted && isDarkMode && <AboutBackgroundEffect />}
+      {isDarkMode && <AboutBackgroundEffect />}
 
       <TopHeader
         topSubTitle="A bit about"
