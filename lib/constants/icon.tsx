@@ -223,71 +223,28 @@ export const SvgIcons = {
       xmlns="http://www.w3.org/2000/svg"
       width={24}
       height={24}
-      viewBox="0 0 256 256"
+      viewBox="0 0 128 128"
       {...props}
     >
-      <defs>
-        <linearGradient
-          id="logosNextjsIcon0"
-          x1="55.633%"
-          x2="83.228%"
-          y1="56.385%"
-          y2="96.08%"
-        >
-          <stop offset="0%" stopColor="#fff"></stop>
-          <stop offset="100%" stopColor="#fff" stopOpacity={0}></stop>
-        </linearGradient>
-        <linearGradient
-          id="logosNextjsIcon1"
-          x1="50%"
-          x2="49.953%"
-          y1="0%"
-          y2="73.438%"
-        >
-          <stop offset="0%" stopColor="#fff"></stop>
-          <stop offset="100%" stopColor="#fff" stopOpacity={0}></stop>
-        </linearGradient>
-        <circle id="logosNextjsIcon2" cx={128} cy={128} r={128}></circle>
-      </defs>
-      <mask id="logosNextjsIcon3" fill="#fff">
-        <use href="#logosNextjsIcon2"></use>
-      </mask>
-      <g mask="url(#logosNextjsIcon3)">
-        <circle cx={128} cy={128} r={128}></circle>
-        <path
-          fill="url(#logosNextjsIcon0)"
-          d="M212.634 224.028L98.335 76.8H76.8v102.357h17.228V98.68L199.11 234.446a128 128 0 0 0 13.524-10.418"
-        ></path>
-        <path
-          fill="url(#logosNextjsIcon1)"
-          d="M163.556 76.8h17.067v102.4h-17.067z"
-        ></path>
-      </g>
+      <path
+        fill="currentColor"
+        d="M64 0A64 64 0 0 0 0 64a64 64 0 0 0 64 64a64 64 0 0 0 35.508-10.838L47.014 49.34v40.238H38.4V38.4h10.768l57.125 73.584A64 64 0 0 0 128 64A64 64 0 0 0 64 0m17.777 38.4h8.534v48.776L81.777 75.97Zm24.18 73.92l-.111.096z"
+      ></path>
     </svg>
   ),
   tailwind: (props: SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={39.9}
+      width={24}
       height={24}
-      viewBox="0 0 256 154"
+      viewBox="0 0 24 24"
       {...props}
     >
-      <defs>
-        <linearGradient
-          id="logosTailwindcssIcon0"
-          x1="-2.778%"
-          x2="100%"
-          y1="32%"
-          y2="67.556%"
-        >
-          <stop offset="0%" stopColor="#2298bd"></stop>
-          <stop offset="100%" stopColor="#0ed7b5"></stop>
-        </linearGradient>
-      </defs>
       <path
-        fill="url(#logosTailwindcssIcon0)"
-        d="M128 0Q76.8 0 64 51.2Q83.2 25.6 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8q51.2 0 64-51.2q-19.2 25.6-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0M64 76.8q-51.2 0-64 51.2q19.2-25.6 44.8-19.2c9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6q51.2 0 64-51.2q-19.2 25.6-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8"
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M7 9.969q1-4.063 5-4.063c4 0 4.5 3.047 6.5 3.555q2 .508 3.5-1.524Q21 12 17 12c-4 0-4.5-3.047-6.5-3.555Q8.5 7.938 7 9.97m-5 6.094Q3 12 7 12c4 0 4.5 3.047 6.5 3.555q2 .507 3.5-1.524q-1 4.063-5 4.063c-4 0-4.5-3.047-6.5-3.555q-2-.508-3.5 1.524"
+        clipRule="evenodd"
       ></path>
     </svg>
   ),

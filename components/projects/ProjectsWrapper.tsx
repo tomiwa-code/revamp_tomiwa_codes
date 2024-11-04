@@ -7,8 +7,8 @@ import { getProjects } from "@/sanity/sanity.query";
 import { ProjectResProps } from "@/types/project.type";
 import ContentLoader from "../general/ContentLoader";
 import dynamic from "next/dynamic";
+import ProjectList from "./ProjectList";
 
-const ProjectList = dynamic(() => import("./ProjectList"));
 const ProjectsBackGroundEffect = dynamic(
   () => import("./ProjectsBackgroundEffect")
 );
@@ -64,7 +64,7 @@ const ProjectsWrapper = () => {
         </div>
       ) : (
         <>
-          <div className="relative z-40 mt-24 mx-auto gap-y-12 grid md:grid-cols-2 w-full md:w-9/12 lg:w-[58%] md:gap-x-10 md:gap-y-14 lg:gap-16">
+          <div className="relative z-40 mt-16 md:mt-24 mx-auto pl-5 md:pl-10 lg:pl-0 gap-y-12 grid md:grid-cols-2 w-full md:w-[90%] lg:w-[58%] md:gap-x-5 lg:gap-x-10 md:gap-y-14 lg:gap-16">
             {projectData &&
               projectData.map((item, idx) => (
                 <BlurFade key={item._id} delay={0.25 + idx * 0.05} inView>
@@ -98,7 +98,7 @@ const ProjectsWrapper = () => {
               <p
                 className={`${
                   isDarkMode ? "text-light-600 font-light" : "text-dark-100"
-                } text-xs md:text-sm`}
+                } text-xs md:text-sm text-center w-[80%] mx-auto`}
               >
                 Trust me with your project, and prepare to be impressed.
               </p>

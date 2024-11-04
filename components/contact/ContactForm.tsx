@@ -67,7 +67,7 @@ const ContactForm = ({ isDarkMode }: Props) => {
     isDarkTheme
       ? "text-gray-300 placeholder:text-gray-300"
       : "text-dark-300 placeholder:text-dark-300"
-  }  text-sm py-4 border-b border-b-gray-400 w-full bg-transparent focus:outline-none focus:border-b-primary-500`;
+  }  text-xs md:text-sm py-4 border-b border-b-gray-400 w-full bg-transparent focus:outline-none focus:border-b-primary-500`;
 
   // USE EFFECTS
   React.useEffect(() => {
@@ -82,7 +82,7 @@ const ContactForm = ({ isDarkMode }: Props) => {
   }, [msg?.status]);
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden pl-5 md:pl-0">
       <div
         onClick={() =>
           setMsg({
@@ -96,7 +96,7 @@ const ContactForm = ({ isDarkMode }: Props) => {
       </div>
 
       <div
-        className={`relative z-50 mt-24 ${isDarkMode ? "bg-dark-200 backdrop-blur-sm bg-opacity-30" : ""} w-[50%] p-10 rounded-2xl mx-auto`}
+        className={`relative z-50 mt-16 md:mt-24 ${isDarkMode ? "md:bg-dark-200 md:backdrop-blur-sm md:bg-opacity-30" : ""} w-[80%] md:w-[70%] lg:w-[50%] md:p-10 rounded-2xl mx-auto`}
       >
         <form className="w-full mx-auto" onSubmit={handleFormSubmit}>
           <div className="block md:flex md:items-center md:justify-between mb-5 md:mb-10">
@@ -157,7 +157,7 @@ const ContactForm = ({ isDarkMode }: Props) => {
                 isDarkTheme
                   ? "text-gray-300 placeholder:text-gray-300"
                   : "text-dark-300 placeholder:text-dark-300"
-              }  text-sm py-3 border-b border-b-gray-400 w-full bg-transparent focus:outline-none h-20 md:h-16 resize-none focus:border-b-primary-500`}
+              } text-xs md:text-sm py-3 border-b border-b-gray-400 w-full bg-transparent focus:outline-none h-20 md:h-16 resize-none focus:border-b-primary-500`}
               placeholder="Hi, we need a website for our Company X. How soon can you hop on to discuss this?"
               onChange={(e) =>
                 setMail((prev) => ({

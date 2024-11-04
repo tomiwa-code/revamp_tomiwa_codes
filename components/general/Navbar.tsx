@@ -33,7 +33,7 @@ const Navbar = () => {
         ? "before:bg-dark-100 text-dark-300"
         : "before:bg-primary-600 text-gray-200";
 
-    return `${baseClasses} ${activeClasses}`;
+    return `${baseClasses} ${activeClasses} text-xs md:text-base`;
   };
 
   // STYLES
@@ -43,7 +43,7 @@ const Navbar = () => {
   } h-[120px] md:h-1/4`;
 
   return (
-    <div className="fixed -ml-3 md:ml-0 md:px-6 flex flex-col items-center justify-between h-screen z-[9999]">
+    <div className="fixed -ml-3 md:ml-0 lg:px-6 flex flex-col items-center justify-between h-screen z-[9999]">
       {/* LINE  */}
       <div className={`${lineStyles}`} />
 

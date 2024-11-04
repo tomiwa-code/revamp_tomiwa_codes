@@ -40,21 +40,21 @@ export function SandDBeam({ className }: { className?: string }) {
     >
       <div className="flex size-full flex-row items-stretch justify-between max-w-lg">
         <div className="flex flex-col justify-center gap-y-6">
-          <Circle ref={div1Ref} className="size-16">
+          <Circle ref={div1Ref} className="size-12 md:size-14 lg:size-16">
             <SvgIcons.firebase width={100} height={100} />
           </Circle>
 
-          <Circle ref={div2Ref} className="size-16">
+          <Circle ref={div2Ref} className="size-12 md:size-14 lg:size-16">
             <SvgIcons.mongoDB width={100} height={100} />
           </Circle>
 
-          <Circle ref={div3Ref} className="size-16">
+          <Circle ref={div3Ref} className="size-12 md:size-14 lg:size-16">
             <SvgIcons.sanity width={100} height={100} />
           </Circle>
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <Circle ref={div4Ref} className="size-16">
+          <Circle ref={div4Ref} className="size-12 md:size-14 lg:size-16">
             <SvgIcons.user width={100} height={100} color="#282828" />
           </Circle>
         </div>
@@ -107,11 +107,11 @@ export function FrontendDevBeam({ className }: { className?: string }) {
           </Circle>
 
           <Circle ref={div2Ref} className="size-20">
-            <SvgIcons.next width={100} height={100} />
+            <SvgIcons.next width={100} height={100} color="#282828" />
           </Circle>
 
           <Circle ref={div3Ref} className="size-20">
-            <SvgIcons.reactNative width={100} height={100} color="#282828 " />
+            <SvgIcons.reactNative width={100} height={100} color="#282828" />
           </Circle>
 
           <Circle ref={div4Ref} className="size-20">
@@ -135,7 +135,7 @@ export function FrontendDevBeam({ className }: { className?: string }) {
           </Circle>
 
           <Circle ref={div11Ref} className="size-20">
-            <SvgIcons.tailwind width={100} height={100} />
+            <SvgIcons.tailwind color="#2298bd" width={100} height={100} />
           </Circle>
         </div>
 
@@ -239,16 +239,16 @@ export function IntegratingApiBeam({ className }: { className?: string }) {
     >
       <div className="flex size-full flex-col items-stretch justify-between">
         <div className="flex justify-between">
-          <Circle ref={div1Ref} className="size-16">
-            <p className="font-bold text-3xl mt-1 text-dark-200">FE</p>
+          <Circle ref={div1Ref} className="size-12 md:size-14 lg:size-16">
+            <p className="font-bold text-xl md:text-3xl mt-1 text-dark-200">FE</p>
           </Circle>
 
-          <Circle ref={div2Ref} className="size-16">
+          <Circle ref={div2Ref} className="size-12 md:size-14 lg:size-16">
             <SvgIcons.api width={100} height={100} color="#282828 " />
           </Circle>
 
-          <Circle ref={div3Ref} className="size-16">
-            <p className="font-bold text-3xl mt-1 text-dark-200">BE</p>
+          <Circle ref={div3Ref} className="size-12 md:size-14 lg:size-16">
+            <p className="font-bold text-xl md:text-3xl mt-1 text-dark-200">BE</p>
           </Circle>
         </div>
       </div>
@@ -281,10 +281,10 @@ export function VersionControlBeam() {
     >
       <div className="flex size-full flex-col items-stretch justify-between gap-10">
         <div className="flex flex-row justify-between">
-          <Circle ref={div1Ref} className="size-16">
+          <Circle ref={div1Ref} className="size-12 md:size-14 lg:size-16">
             <SvgIcons.git width={100} height={100} />
           </Circle>
-          <Circle ref={div2Ref} className="size-16">
+          <Circle ref={div2Ref} className="size-12 md:size-14 lg:size-16">
             <SvgIcons.github width={100} height={100} color="#282828" />
           </Circle>
         </div>

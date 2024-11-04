@@ -16,7 +16,7 @@ const ContactWrapper = () => {
 
   return (
     <div
-      className={`w-full min-h-screen relative pb-20 ${
+      className={`w-full min-h-screen relative pb-12 md:pb-20 ${
         isDarkMode ? "bg-dark-100 text-light-100" : "text-dark-100 bg-light-200"
       }`}
     >
@@ -32,11 +32,11 @@ const ContactWrapper = () => {
         <ContactForm isDarkMode={isDarkMode} />
       </BlurFade>
 
-      <div className="mt-20 w-full relative z-50 flex items-center justify-center">
+      <div className="mt-8 md:mt-20 w-[70%] mx-auto md:[50%] relative z-50 flex items-center justify-center">
         <FadeText
           className={`${
             isDarkMode ? "text-light-600 font-light" : "text-dark-100"
-          } text-xs md:text-sm`}
+          } text-xs leading-5 md:text-sm text-center w-full block`}
           text={
             "I am open to remote and onsite full-time, part-time, and contract frontend web & mobile development jobs."
           }

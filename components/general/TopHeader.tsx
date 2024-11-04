@@ -22,7 +22,7 @@ const TopHeader: React.FunctionComponent<ITopHeaderProps> = ({
   const isDarkMode = theme === "dark";
 
   return (
-    <div className="z-50 relative pt-36 text-center space-y-3  mx-auto">
+    <div className="z-50 relative pt-20 md:pt-36 text-center space-y-1 md:space-y-3 mx-auto">
       <div className="w-full flex items-center justify-center">
         <FadeText
           className={`${
@@ -32,13 +32,13 @@ const TopHeader: React.FunctionComponent<ITopHeaderProps> = ({
         />
       </div>
 
-      <GradualSpacing
-        className={` ${
-          isDarkMode ? "text-primary-600 font-light" : "text-dark-300"
-        } uppercase text-2xl md:text-4xl font-sans`}
-        text={title}
-      />
-    
+        <GradualSpacing
+          className={` ${
+            isDarkMode ? "text-primary-600 font-light" : "text-dark-300"
+          } uppercase text-base md:text-2xl lg:text-4xl font-sans`}
+          text={title}
+        />
+
       <FadeText
         className={`${
           isDarkMode ? "text-light-600 font-light" : "text-dark-100"
