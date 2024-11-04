@@ -19,10 +19,10 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
   const isDarkMode = theme === "dark";
 
   // STYLES
-  const dockIconStyles = `${isDarkMode ? "bg-black/10" : "bg-dark-200"} p-3`;
+  const dockIconStyles = `${isDarkMode ? "bg-black/10" : "bg-dark-200"} md:p-3`;
 
   return (
-    <div className="absolute bottom-8 md:bottom-16 z-[90]">
+    <div className="relative z-[90] pl-5 md:pl-0">
       <BlurFade delay={0 * 3} inView>
         <Dock magnification={60} distance={100}>
           <DockIcon className={`${dockIconStyles}`}>
@@ -32,7 +32,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              <icons.github className={"text-primary-100"} />
+              <icons.github className={"text-primary-100 text-xs md:text-base"} />
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
@@ -42,7 +42,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              <icons.linkedin className={"text-primary-100"} />
+              <icons.linkedin className={"text-primary-100 text-xs md:text-base"} />
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
@@ -52,7 +52,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              <icons.tiktok className={"text-primary-100"} />
+              <icons.tiktok className={"text-primary-100 text-xs md:text-base"} />
             </Link>
           </DockIcon>
           <DockIcon className={`${dockIconStyles}`}>
@@ -62,7 +62,7 @@ const SocialDock = ({ socialLinks }: SocialDockProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              <icons.x className={"text-primary-100"} />
+              <icons.x className={"text-primary-100 text-sm md:text-base"} />
             </Link>
           </DockIcon>
         </Dock>

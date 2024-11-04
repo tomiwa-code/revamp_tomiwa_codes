@@ -13,24 +13,24 @@ const ToggleTheme = () => {
   return (
     <div
       onClick={toggleTheme}
-      className="flex cursor-pointer items-center rounded-full bg-gray-300 dark:bg-gray-700 focus:outline-none z-[999] fixed right-10 top-8"
+      className="flex cursor-pointer items-center rounded-full bg-gray-300 dark:bg-gray-700 focus:outline-none z-[999] fixed right-3 top-3 md:right-10 md:top-8"
     >
-      <div className="w-20 h-10 pl-2 rounded-full bg-dark-500 dark:bg-gray-300 relative flex items-center">
+      <div className="w-10 h-6 md:w-20 md:h-10 pl-2 rounded-full bg-dark-500 dark:bg-gray-300 relative flex items-center">
         <div
-          className={`absolute w-8 h-8 bg-light-100 rounded-full flex items-center justify-center duration-300 transition-transform transform ${
-            isDarkMode ? "translate-x-0" : "translate-x-8"
+          className={`absolute w-4 h-4 md:w-8 md:h-8 bg-light-100 rounded-full flex items-center justify-center duration-300 transition-transform transform ${
+            isDarkMode ? "-translate-x-1 md:translate-x-0" : "translate-x-3 md:translate-x-8"
           }`}
         >
           {isDarkMode ? (
             <div>
               <icons.moon
-                className={`text-xl ${isDarkMode ? "text-primary-600" : "text-dark-300"}`}
+                className={`text-xs md:text-xl ${isDarkMode ? "text-primary-600" : "text-dark-300"}`}
               />
             </div>
           ) : (
             <div>
               <icons.sun
-                className={`text-xl ${isDarkMode ? "text-primary-600" : "text-dark-300"}`}
+                className={`text-xs md:text-xl ${isDarkMode ? "text-primary-600" : "text-dark-300"}`}
               />
             </div>
           )}

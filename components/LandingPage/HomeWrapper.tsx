@@ -53,7 +53,7 @@ const HomeWrapper = () => {
 
   return (
     <div
-      className={`flex ${
+      className={`flex flex-col pb-5 md:pb-10 ${
         isDarkMode ? "bg-dark-100 text-light-100" : "text-dark-100 bg-light-200"
       } items-center justify-center h-screen`}
     >
@@ -65,9 +65,8 @@ const HomeWrapper = () => {
         ) : (
           heroData && <TextContent isDarkMode={isDarkMode} content={heroData} />
         )}
-
-        {socialLinks && <SocialDock socialLinks={socialLinks} />}
       </div>
+      {socialLinks && <SocialDock socialLinks={socialLinks} />}
     </div>
   );
 };

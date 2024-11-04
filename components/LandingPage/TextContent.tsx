@@ -15,7 +15,7 @@ const TextContent: React.FC<HomeProps> = ({ isDarkMode, content }) => {
   const boxRevealColor = "#cd8aee";
 
   return (
-    <div className="w-full flex flex-col items-center justify-center relative z-20 pb-8 md:pb-0">
+    <div className="w-full flex flex-col items-center justify-center relative z-20 mt-16">
       <BoxReveal boxColor={boxRevealColor} duration={0.5}>
         <p className={`text-sm text-left md:text-xl font-light`}>{firstText}</p>
       </BoxReveal>
@@ -24,7 +24,7 @@ const TextContent: React.FC<HomeProps> = ({ isDarkMode, content }) => {
         <AnimatedGradientText>
           <h1
             className={cn(
-              `inline animate-gradient text-3xl uppercase md:text-7xl mt-5 font-sans bg-gradient-to-r from-[#ffaa40] via-primary-600 to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+              `inline animate-gradient text-3xl uppercase md:text-7xl mt-2 md:mt-5 font-sans bg-gradient-to-r from-[#ffaa40] via-primary-600 to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
             )}
           >
             {heroText1}
@@ -35,7 +35,7 @@ const TextContent: React.FC<HomeProps> = ({ isDarkMode, content }) => {
       <div className="w-[70%] mx-auto">
         <BoxReveal boxColor={boxRevealColor} duration={0.5}>
           <AnimatedShinyText
-            className={`transition ease-out ${isDarkMode ? "text-light-100/70" : "text-dark-400/70"} mt-5 pb-2  text-center`}
+            className={`transition ease-out ${isDarkMode ? "text-light-100/70" : "text-dark-400/70"} mt-2 md:mt-5 pb-2  text-center`}
           >
             <span
               className={`font-medium md:font-semibold text-xl md:text-5xl text-center`}
@@ -49,7 +49,7 @@ const TextContent: React.FC<HomeProps> = ({ isDarkMode, content }) => {
       <div className="w-[70%] md:w-[50%] mx-auto">
         <BoxReveal boxColor={boxRevealColor} duration={0.5}>
           <p
-            className={`px-2 md:px-0 leading-6 md:leading-7 text-center text-sm md:text-lg font-light mt-5`}
+            className={`px-2 md:px-0 leading-6 md:leading-7 text-center text-sm md:text-lg font-light mt-2 md:mt-5`}
           >
             {secondText}
           </p>
